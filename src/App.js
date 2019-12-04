@@ -67,11 +67,11 @@ class App extends React.Component{
       cardIds: list.cardIds.filter(id => id !== cardId)
     }));
 
-    const newCards = omit(this.state.allCards, cardId);
+    delete this.state.allCards.cardId;
 
     this.setState({
       lists: newLists,
-      allCards: newCards
+      allCards: this.state.allCards
     })
   }
   
